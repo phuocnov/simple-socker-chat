@@ -5,16 +5,16 @@
 #include "server.hpp"
 
 int main(int argc, char *argv[]) {
-  Client *client;
-  Server *server;
+  Client client;
+  Server server;
   if (argc > 1) {
     if (strcmp(argv[1], "--server") == 0) {
-      server->main();
+      server.m_main();
     } else {
-      client->main();
+      client.m_main();
     }
   } else {
-    client->main();
+    client.m_main();
   }
   return 0;
 }

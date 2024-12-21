@@ -4,7 +4,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 
-void Server::main() {
+void Server::m_main() {
   // Create a socket
   int socker_server = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -29,7 +29,9 @@ void Server::main() {
     // Receive data from the client
     char buffer[BUFFER_SIZE] = {0};
     recv(client_socket, buffer, BUFFER_SIZE, 0);
-    std::cout << "Message: " << buffer << std::endl;
+    Package package;
+    package.deserialize(buffer);
+    package.display();
   }
 
   close(socker_server);

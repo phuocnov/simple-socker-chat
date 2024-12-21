@@ -10,9 +10,10 @@ enum EAppState { INIT, ASSIGN_USERNAME, CHATTING, EXIT };
 
 class Client {
 private:
-  EAppState m_app_state = INIT;
+  EAppState m_app_state;
   std::string m_username;
   std::stack<Package> m_packets;
+  bool m_exit;
 
   void init_state();
   void assign_username();
@@ -20,5 +21,9 @@ private:
   void exit();
 
 public:
-  void main();
+  Client() {
+    m_app_state = INIT;
+    m_exit = false;
+  }
+  void m_main();
 };

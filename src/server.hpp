@@ -13,5 +13,5 @@ private:
   void send_message(int client_socket);
 
 public:
-  void main();
+  void m_main();
 };

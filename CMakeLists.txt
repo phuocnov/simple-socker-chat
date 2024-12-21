@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 file(GLOB SOURCES "src/*.cpp")
 
 # Add the header files
-file(GLOB HEADERS "include/*.hpp")
+file(GLOB HEADERS "src/*.hpp")
 
 # Add the executable
 add_executable(cpp-socket-chat ${SOURCES} ${HEADERS})
